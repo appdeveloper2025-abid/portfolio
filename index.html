@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABID MEHMOOD | Portfolio</title>
+    <!-- Preconnect for faster font loading -->
+    <link rel="icon" type="image/jpeg" href="My%20Picture.JPG">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Critical CSS inline, fonts non-blocking -->
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Exo+2:wght@700;900&family=Rajdhani:wght@500;700&family=Inter:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Exo+2:wght@700;900&family=Rajdhani:wght@500;700&family=Inter:wght@400;500&display=swap" rel="stylesheet"></noscript>
+    <!-- Font Awesome subset -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" media="print" onload="this.media='all'">
+</head>
+<body>
+
+    <!-- Password Gate -->
+    <div id="password-gate">
+        <div class="pw-box">
+            <div class="pw-logo">
+                <img src="My%20Picture.JPG" alt="Abid Mehmood">
+            </div>
+            <h2 class="pw-title">ENTER PASSWORD</h2>
+            <div class="pw-input-wrap">
+                <input type="password" id="pw-input" placeholder="Password" autocomplete="off">
+                <button type="button" id="pw-eye"><i class="fas fa-eye"></i></button>
+                <div class="input-line"></div>
+            </div>
+            <p class="pw-error" id="pw-error"></p>
+            <button class="btn-primary" id="pw-submit">UNLOCK <i class="fas fa-lock-open"></i></button>
+        </div>
+    </div>
+
+    <!-- Loader -->
+    <div id="loader">
+        <div class="loader-inner">
+            <div class="loader-ring"></div>
+            <div class="loader-ring"></div>
+            <div class="loader-ring"></div>
+            <p class="loader-text">INITIALIZING...</p>
+        </div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-logo">
+            <div class="nav-avatar">
+                <img src="My%20Picture.JPG" alt="Abid Mehmood">
+            </div>
+            <div class="logo-glow"></div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home" class="nav-link active">Home</a></li>
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#skills" class="nav-link">Skills</a></li>
+            <li><a href="#projects" class="nav-link">Projects</a></li>
+            <li><a href="projects.html" class="nav-link">All Projects</a></li>
+            <li><a href="card.html" class="nav-link">My Card</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+        <div class="hamburger">
+            <span></span><span></span><span></span>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <ul>
+            <li><a href="#home" class="mob-link">Home</a></li>
+            <li><a href="#about" class="mob-link">About</a></li>
+            <li><a href="#skills" class="mob-link">Skills</a></li>
+            <li><a href="#projects" class="mob-link">Projects</a></li>
+            <li><a href="projects.html" class="mob-link">All Projects</a></li>
+            <li><a href="card.html" class="mob-link">My Card</a></li>
+            <li><a href="#contact" class="mob-link">Contact</a></li>
+        </ul>
+    </div>
+
+    <!-- HERO SECTION -->
+    <section id="home">
+        <!-- Beautiful Ocean Background -->
+        <div class="hero-ocean-bg"></div>
+        <div class="hero-ocean-overlay"></div>
+        <div class="hero-water-particles"></div>
+        
+        <div class="hero-content">
+            <h1 class="hero-name">
+                <span class="name-first">ABID</span><span class="name-dot"> · </span><span class="name-last">MEHMOOD</span>
+            </h1>
+            <div class="hero-subtitle"><span class="tw-prefix">I am a&nbsp;</span><span class="typewriter"></span><span class="tw-cursor">|</span></div>
+            <div class="hero-btns">
+                <a href="#projects" class="btn-primary">View My Work</a>
+                <a href="#contact" class="btn-secondary">Hire Me</a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat"><span class="stat-num" data-target="50">0</span><span>+</span><p>Projects</p></div>
+                <div class="stat-divider"></div>
+                <div class="stat"><span class="stat-num" data-target="3">0</span><span>+</span><p>Years Exp</p></div>
+                <div class="stat-divider"></div>
+                <div class="stat"><span class="stat-num" data-target="30">0</span><span>+</span><p>Clients</p></div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-line"></div>
+            <span>SCROLL</span>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about">
+        <canvas id="aboutCanvas"></canvas>
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-tag">WHO I AM</span>
+                <h2 class="section-title">About <span class="accent">Me</span></h2>
+            </div>
+            <div class="about-grid">
+                <div class="about-3d-card">
+                    <div class="card-inner" id="about3DCard">
+                        <div class="avatar-container">
+                            <div class="avatar-ring"></div>
+                            <div class="avatar-ring ring2"></div>
+                            <div class="avatar-photo">
+                                <img src="My%20Picture.JPG" alt="Abid Mehmood">
+                            </div>
+                            <div class="avatar-glow"></div>
+                        </div>
+                        <div class="floating-badges">
+                            <div class="badge-float b1"><i class="fas fa-code"></i></div>
+                            <div class="badge-float b2"><i class="fas fa-palette"></i></div>
+                            <div class="badge-float b3"><i class="fas fa-rocket"></i></div>
+                            <div class="badge-float b4"><i class="fas fa-brain"></i></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-info">
+                    <h3 class="about-greeting">Hello, I'm <span class="accent">Abid Mehmood</span></h3>
+                    <p class="about-text">I am a passionate developer with expertise in creating stunning digital experiences. My work combines technical excellence with creative design to deliver solutions that stand out.</p>
+                    <p class="about-text">I specialize in building modern web applications, 3D experiences, and innovative software solutions that push the boundaries of what's possible on the web.</p>
+                    <div class="about-details">
+                        <div class="detail-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Pakistan</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>abidbusiness2025@gmail.com</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>Computer Science</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-briefcase"></i>
+                            <span>Full Stack Developer</span>
+                        </div>
+                    </div>
+                    <a href="cv-new.html" class="btn-primary">Download CV <i class="fas fa-download"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section id="skills">
+        <canvas id="skillsCanvas"></canvas>
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-tag">WHAT I KNOW</span>
+                <h2 class="section-title">My <span class="accent">Skills</span></h2>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-card" data-tilt>
+                    <div class="skill-icon"><i class="fab fa-html5"></i></div>
+                    <h4>HTML5</h4>
+                    <div class="skill-bar"><div class="skill-fill" data-width="95"></div></div>
+                    <span class="skill-percent">95%</span>
+                </div>
+                <div class="skill-card" data-tilt>
+                    <div class="skill-icon"><i class="fab fa-css3-alt"></i></div>
+                    <h4>CSS3</h4>
+                    <div class="skill-bar"><div class="skill-fill" data-width="90"></div></div>
+                    <span class="skill-percent">90%</span>
+                </div>
+                <div class="skill-card" data-tilt>
+                    <div class="skill-icon"><i class="fab fa-js"></i></div>
+                    <h4>JavaScript</h4>
+                    <div class="skill-bar"><div class="skill-fill" data-width="88"></div></div>
+                    <span class="skill-percent">88%</span>
+                </div>
+                <div class="skill-card" data-tilt>
+                    <div class="skill-icon"><i class="fab fa-react"></i></div>
+                    <h4>React</h4>
+                    <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
+                    <span class="skill-percent">85%</span>
+                </div>
+                <div class="skill-card" data-tilt>
+                    <div class="skill-icon"><i class="fab fa-python"></i></div>
+                    <h4>Python</h4>
+                    <div class="skill-bar"><div class="skill-fill" data-width="80"></div></div>
+                    <span class="skill-percent">80%</span>
+                </div>
+                <div class="skill-card" data-tilt>
+                    <div class="skill-icon"><i class="fab fa-node-js"></i></div>
+                    <h4>Node.js</h4>
+                    <div class="skill-bar"><div class="skill-fill" data-width="78"></div></div>
+                    <span class="skill-percent">78%</span>
+                </div>
+                <div class="skill-card" data-tilt>
+                    <div class="skill-icon"><i class="fas fa-database"></i></div>
+                    <h4>Databases</h4>
+                    <div class="skill-bar"><div class="skill-fill" data-width="82"></div></div>
+                    <span class="skill-percent">82%</span>
+                </div>
+                <div class="skill-card" data-tilt>
+                    <div class="skill-icon"><i class="fas fa-cube"></i></div>
+                    <h4>Three.js</h4>
+                    <div class="skill-bar"><div class="skill-fill" data-width="75"></div></div>
+                    <span class="skill-percent">75%</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section id="projects">g i
+        <canvas id="projectsCanvas"></canvas>
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-tag">MY WORK</span>
+                <h2 class="section-title">Featured <span class="accent">Projects</span></h2>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card featured">
+                    <div class="project-badge">Featured</div>
+                    <div class="project-img">
+                        <div class="project-placeholder"><i class="fas fa-shield-alt"></i></div>
+                        <div class="project-overlay">
+                            <a href="https://github.com/appdeveloper2025-abid/phishingurldetectionresearch" target="_blank" rel="noopener" class="proj-btn"><i class="fab fa-github"></i> Code</a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-tags"><span>AI</span><span>Python</span><span>Security</span></div>
+                        <h3>Phishing URL Detection</h3>
+                        <p>Research project for detecting phishing URLs using machine learning algorithms to protect users from cyber threats.</p>
+                    </div>
+                </div>
+                <div class="project-card featured">
+                    <div class="project-badge">Featured</div>
+                    <div class="project-img">
+                        <div class="project-placeholder"><i class="fas fa-star"></i></div>
+                        <div class="project-overlay">
+                            <a href="https://github.com/appdeveloper2025-abid/astronomy" target="_blank" rel="noopener" class="proj-btn"><i class="fab fa-github"></i> Code</a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-tags"><span>Web</span><span>Science</span><span>CSS</span></div>
+                        <h3>Astronomy</h3>
+                        <p>An interactive astronomy website exploring space, planets and galaxies with stunning visuals and educational content.</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-img">
+                        <div class="project-placeholder"><i class="fas fa-robot"></i></div>
+                        <div class="project-overlay">
+                            <a href="https://github.com/appdeveloper2025-abid/NotesproffesorAI" target="_blank" rel="noopener" class="proj-btn"><i class="fab fa-github"></i> Code</a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-tags"><span>AI</span><span>Python</span><span>Education</span></div>
+                        <h3>Notes Professor AI</h3>
+                        <p>AI-powered notes assistant that helps students study smarter by generating summaries and answering questions.</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-img">
+                        <div class="project-placeholder"><i class="fas fa-play-circle"></i></div>
+                        <div class="project-overlay">
+                            <a href="https://github.com/appdeveloper2025-abid/abidflix" target="_blank" rel="noopener" class="proj-btn"><i class="fab fa-github"></i> Code</a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-tags"><span>Web</span><span>Streaming</span><span>API</span></div>
+                        <h3>AbidFlix</h3>
+                        <p>A Netflix-inspired movie streaming UI with trailers, listings and a sleek dark interface built with HTML, CSS & JS.</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-img">
+                        <div class="project-placeholder"><i class="fas fa-store"></i></div>
+                        <div class="project-overlay">
+                            <a href="https://github.com/appdeveloper2025-abid/onlinestore" target="_blank" rel="noopener" class="proj-btn"><i class="fab fa-github"></i> Code</a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-tags"><span>Web</span><span>E-Commerce</span><span>JavaScript</span></div>
+                        <h3>Online Store</h3>
+                        <p>A full-featured e-commerce online store with product listings, shopping cart and a clean checkout experience.</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-img">
+                        <div class="project-placeholder"><i class="fas fa-cube"></i></div>
+                        <div class="project-overlay">
+                            <a href="https://github.com/appdeveloper2025-abid/3Dgame" target="_blank" rel="noopener" class="proj-btn"><i class="fab fa-github"></i> Code</a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-tags"><span>Game</span><span>Three.js</span><span>WebGL</span></div>
+                        <h3>3D Game</h3>
+                        <p>An immersive 3D browser game built with Three.js and WebGL featuring interactive gameplay and real-time rendering.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact">
+        <canvas id="contactCanvas"></canvas>
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-tag">GET IN TOUCH</span>
+                <h2 class="section-title">Contact <span class="accent">Me</span></h2>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Let's Work Together</h3>
+                    <p>Have a project in mind? I'd love to hear about it. Send me a message and let's create something amazing together.</p>
+                    <div class="contact-items">
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                            <div><h4>Email</h4><p>abidbusiness2025@gmail.com</p></div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fas fa-phone"></i></div>
+                            <div><h4>Phone</h4><p>+92 302 9382306</p></div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fab fa-whatsapp"></i></div>
+                            <div><h4>WhatsApp</h4><p>+92 302 9382306</p></div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                            <div><h4>Location</h4><p>Pakistan</p></div>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" class="social-btn"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-btn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-btn"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-btn"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <input type="text" id="userName" placeholder="Your Name" required>
+                        <div class="input-line"></div>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="userEmail" placeholder="Your Email" required>
+                        <div class="input-line"></div>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="messageSubject" placeholder="Subject">
+                        <div class="input-line"></div>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="userMessage" placeholder="Your Message" rows="5" required></textarea>
+                        <div class="input-line"></div>
+                    </div>
+                    <div class="form-buttons">
+                        <button type="submit" class="btn-primary half-width" id="whatsappBtn">
+                            Send to WhatsApp <i class="fab fa-whatsapp"></i>
+                        </button>
+                        <button type="button" class="btn-secondary half-width" id="gmailBtn">
+                            Send to Gmail <i class="fas fa-envelope"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">Abid Mehmood</div>
+            <div class="footer-contact">
+                <a href="mailto:abidbusiness2025@gmail.com" class="footer-contact-item">
+                    <i class="fas fa-envelope"></i> abidbusiness2025@gmail.com
+                </a>
+                <a href="tel:+923029382306" class="footer-contact-item">
+                    <i class="fas fa-phone"></i> +92 302 9382306
+                </a>
+                <a href="https://wa.me/923029382306" target="_blank" class="footer-contact-item">
+                    <i class="fab fa-whatsapp"></i> +92 302 9382306
+                </a>
+            </div>
+            <p>© 2026 Abid Mehmood. All Rights Reserved.</p>
+
+        </div>
+    </footer>
+
+    <!-- Scripts: Three.js deferred -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+    <script src="script.js" defer></script>
+    
+    <!-- WhatsApp & Gmail Contact Form Script -->
+    <script>
+    // WhatsApp functionality
+    document.getElementById('whatsappBtn').addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        // Get form values
+        const name = document.getElementById('userName').value;
+        const email = document.getElementById('userEmail').value;
+        const subject = document.getElementById('messageSubject').value;
+        const message = document.getElementById('userMessage').value;
+        
+        // Validate required fields
+        if (!name || !email || !message) {
+            alert('Please fill in all required fields (Name, Email, Message)');
+            return;
+        }
+        
+        // Create WhatsApp message
+        const whatsappMessage = `*New Contact Form Message*%0A%0A` +
+            `*Name:* ${name}%0A` +
+            `*Email:* ${email}%0A` +
+            `*Subject:* ${subject || 'No Subject'}%0A%0A` +
+            `*Message:*%0A${message}%0A%0A` +
+            `----%0ASent from Portfolio Website`;
+        
+        // Your WhatsApp number
+        const whatsappNumber = '923029382306';
+        
+        // Create WhatsApp URL
+        const whatsappURL = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
+        
+        // Open WhatsApp
+        window.open(whatsappURL, '_blank');
+        
+        // Reset form
+        document.getElementById('contactForm').reset();
+        
+        // Show success message
+        alert('Redirecting to WhatsApp...');
+    });
+    
+    // Gmail functionality
+    document.getElementById('gmailBtn').addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        // Get form values
+        const name = document.getElementById('userName').value;
+        const email = document.getElementById('userEmail').value;
+        const subject = document.getElementById('messageSubject').value;
+        const message = document.getElementById('userMessage').value;
+        
+        // Validate required fields
+        if (!name || !email || !message) {
+            alert('Please fill in all required fields (Name, Email, Message)');
+            return;
+        }
+        
+        // Create Gmail compose URL
+        const gmailSubject = encodeURIComponent(`Portfolio Contact: ${subject || 'New Message from ' + name}`);
+        const gmailBody = encodeURIComponent(
+            `New Contact Form Message\n\n` +
+            `Name: ${name}\n` +
+            `Email: ${email}\n` +
+            `Subject: ${subject || 'No Subject'}\n\n` +
+            `Message:\n${message}\n\n` +
+            `----\n` +
+            `Sent from Portfolio Website\n` +
+            `Reply to: ${email}`
+        );
+        
+        // Your Gmail address
+        const gmailAddress = 'abidbusiness2025@gmail.com';
+        
+        // Create Gmail compose URL
+        const gmailURL = `https://mail.google.com/mail/?view=cm&fs=1&to=${gmailAddress}&su=${gmailSubject}&body=${gmailBody}`;
+        
+        // Open Gmail
+        window.open(gmailURL, '_blank');
+        
+        // Reset form
+        document.getElementById('contactForm').reset();
+        
+        // Show success message
+        alert('Redirecting to Gmail...');
+    });
+    </script>
+</body>
+</html>

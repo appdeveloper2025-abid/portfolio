@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abid Mehmood — CV</title>
+    <link rel="icon" type="image/jpeg" href="My%20Picture.JPG">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        /* Reset & Variables */
+        *, *::before, *::after { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+        }
+
+        :root {
+            --primary: #2563eb;
+            --secondary: #7c3aed;
+            --accent: #06b6d4;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --dark: #1e293b;
+            --darker: #0f172a;
+            --light: #f8fafc;
+            --white: #ffffff;
+            --gray-50: #f9fafb;
+            --gray-100: #f3f4f6;
+            --gray-200: #e5e7eb;
+            --gray-300: #d1d5db;
+            --gray-400: #9ca3af;
+            --gray-500: #6b7280;
+            --gray-600: #4b5563;
+            --gray-700: #374151;
+            --gray-800: #1f2937;
+            --gray-900: #111827;
+            --gradient-primary: linear-gradient(135deg, var(--primary), var(--secondary));
+            --gradient-accent: linear-gradient(135deg, var(--accent), var(--success));
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--gray-50);
+            color: var(--gray-800);
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        /* Header & Navigation */
+        .cv-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--gray-200);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 2rem;
+            z-index: 1000;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .cv-header-left {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .cv-header-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--primary);
+        }
+
+        .cv-header-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .cv-header-actions {
+            display: flex;
+            gap: 0.75rem;
+            align-items: center;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border: none;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid var(--gray-300);
+            color: var(--gray-700);
+        }
+
+        .btn-outline:hover {
+            background: var(--gray-50);
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-primary {
+            background: var(--gradient-primary);
+            color: white;
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* Main CV Container */
+        .cv-container {
+            margin-top: 60px;
+            padding: 1rem;
+            display: flex;
+            justify-content: center;
+            min-height: calc(100vh - 60px);
+        }
+
+        .cv-page {
+            width: 100%;
+            max-width: 1000px;
+            background: white;
+            border-radius: 1rem;
+            box-shadow: var(--shadow-xl);
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 320px 1fr;
+            min-height: 800px;
+        }
+
+        /* Left Sidebar */
+        .cv-sidebar {
+            background: var(--gradient-primary);
+            padding: 1.5rem;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+
+        .cv-main {
+            background: var(--white);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .cv-header-name {
+            font-family: 'Poppins', sans-serif;
+            font-size: 28px;
+            font-weight: 800;
+            color: #fff;
+            letter-spacing: 4px;
+        }
+
+        .cv-header-name span {
+            background: linear-gradient(135deg, #00f5ff, #7b2ff7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .cv-header-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .cv-header-tags span {
+            padding: 3px 12px;
+            background: rgba(0,245,255,0.12);
+            border: 1px solid rgba(0,245,255,0.3);
+            border-radius: 50px;
+            font-size: 10px;
+            color: #00f5ff;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .cv-body {
+            padding: 28px 32px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        /* Section title */
+        .cv-sec-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #7b2ff7;
+            border-bottom: 2px solid #7b2ff7;
+            padding-bottom: 6px;
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .cv-sec-title i { color: #00f5ff; }
+
+        /* About text */
+        .cv-about-text {
+            font-size: 12px;
+            color: #444;
+            line-height: 1.8;
+        }
+
+        /* Experience / Education items */
+        .cv-item {
+            margin-bottom: 16px;
+            padding-left: 12px;
+            border-left: 2px solid rgba(0,245,255,0.4);
+        }
+
+        .cv-item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 6px;
+        }
+
+        .cv-item-title {
+            font-size: 13px;
+            font-weight: 700;
+            color: #1a1a3d;
+        }
+
+        .cv-item-sub {
+            font-size: 11px;
+            color: #7b2ff7;
+            margin-top: 2px;
+        }
+
+        .cv-item-date {
+            font-size: 10px;
+            color: #fff;
+            background: linear-gradient(135deg, #0d0d2b, #1a0a3d);
+            padding: 3px 10px;
+            border-radius: 50px;
+            white-space: nowrap;
+            border: 1px solid rgba(0,245,255,0.3);
+        }
+
+        .cv-item-list {
+            padding-left: 16px;
+        }
+
+        .cv-item-list li {
+            font-size: 11px;
+            color: #555;
+            line-height: 1.7;
+            margin-bottom: 3px;
+        }
+
+        /* Projects grid */
+        .cv-projects-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .cv-proj {
+            background: #fff;
+            border: 1px solid rgba(123,47,247,0.15);
+            border-radius: 10px;
+            padding: 12px 14px;
+            border-left: 3px solid #00f5ff;
+        }
+
+        .cv-proj-name {
+            font-size: 11px;
+            font-weight: 700;
+            color: #1a1a3d;
+            margin-bottom: 6px;
+        }
+
+        .cv-proj-name i {
+            color: #7b2ff7;
+            margin-right: 4px;
+        }
+
+        .cv-proj-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+            margin-bottom: 6px;
+        }
+
+        .cv-proj-tags span {
+            padding: 2px 7px;
+            background: rgba(0,245,255,0.08);
+            border: 1px solid rgba(0,245,255,0.25);
+            border-radius: 50px;
+            font-size: 9px;
+            color: #7b2ff7;
+            letter-spacing: 0.5px;
+        }
+
+        .cv-proj-desc {
+            font-size: 10px;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Stats row */
+        .cv-stats-row {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin-top: auto;
+            padding-top: 8px;
+        }
+
+        .cv-stat {
+            background: linear-gradient(135deg, #0d0d2b, #1a0a3d);
+            border-radius: 10px;
+            padding: 14px 10px;
+            text-align: center;
+            border: 1px solid rgba(0,245,255,0.2);
+        }
+
+        .cv-stat-num {
+            display: block;
+            font-family: 'Poppins', sans-serif;
+            font-size: 20px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #00f5ff, #7b2ff7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .cv-stat-label {
+            display: block;
+            font-size: 9px;
+            color: #8888aa;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-top: 2px;
+        }
+
+        /* ── PRINT STYLES ── */
+        @media print {
+            body { background: #fff !important; }
+            #dl-bar { display: none !important; }
+            #cv-wrapper { margin-top: 0 !important; padding: 0 !important; }
+            #cv-page {
+                width: 100% !important;
+                box-shadow: none !important;
+                border-radius: 0 !important;
+                min-height: auto !important;
+            }
+            .cv-sidebar { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .cv-header-strip { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .cv-stat { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .cv-item-date { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+        }
+
+        @page { margin: 0; size: A4; }
+    </style>
+</head>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --cyan:    #00f5ff;
+            --purple:  #7b2ff7;
+            --pink:    #ff006e;
+            --dark:    #0a0a1a;
+            --darker:  #050510;
+            --card:    #111128;
+            --border:  rgba(0,245,255,0.18);
+            --text:    #e8e8f0;
+            --muted:   #8888aa;
+            --white:   #ffffff;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--darker);
+            color: var(--text);
+            min-height: 100vh;
+        }
+
+        /* ── DOWNLOAD BAR ── */
+        #dl-bar {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            height: 56px;
+            background: rgba(5,5,16,0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 32px;
+            z-index: 9999;
+        }
+
+        #dl-bar .bar-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        #dl-bar .bar-left img {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            border: 1px solid var(--cyan);
+            object-fit: cover;
+            object-position: top;
+        }
+
+        #dl-bar .bar-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            background: linear-gradient(135deg, var(--cyan), var(--purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        #dl-bar .bar-right {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .btn-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            padding: 8px 18px;
+            background: transparent;
+            border: 1px solid var(--border);
+            border-radius: 50px;
+            color: var(--muted);
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-back:hover {
+            border-color: var(--cyan);
+            color: var(--cyan);
+        }
+
+        .btn-download {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 9px 22px;
+            background: linear-gradient(135deg, var(--cyan), var(--purple));
+            border: none;
+            border-radius: 50px;
+            color: #000;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-download:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,245,255,0.35);
+        }
+
+        /* ── CV WRAPPER ── */
+        #cv-wrapper {
+            margin-top: 56px;
+            padding: 40px 20px 60px;
+            display: flex;
+            justify-content: center;
+        }
+
+        /* ── CV PAGE ── */
+        #cv-page {
+            width: 860px;
+            background: var(--white);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 30px 80px rgba(0,0,0,0.6), 0 0 0 1px rgba(0,245,255,0.1);
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            min-height: 1100px;
+        }
+
+        /* ── LEFT SIDEBAR ── */
+        .cv-sidebar {
+            background: linear-gradient(160deg, #0d0d2b 0%, #1a0a3d 50%, #0d0d2b 100%);
+            padding: 40px 28px;
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+
+        /* Photo */
+        .cv-photo-wrap {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .cv-photo-ring {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            padding: 3px;
+            background: linear-gradient(135deg, var(--cyan), var(--purple), var(--pink));
+        }
+
+        .cv-photo-ring img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: top center;
+            border: 3px solid #0d0d2b;
+        }
+
+        .cv-name {
+            font-family: 'Poppins', sans-serif;
+            font-size: 18px;
+            font-weight: 800;
+            color: var(--white);
+            text-align: center;
+            letter-spacing: 2px;
+            line-height: 1.2;
+        }
+
+        .cv-role {
+            font-size: 10px;
+            color: var(--cyan);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            text-align: center;
+            margin-top: -8px;
+        }
+
+        /* Sidebar section title */
+        .sb-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--cyan);
+            border-bottom: 1px solid rgba(0,245,255,0.2);
+            padding-bottom: 8px;
+            margin-bottom: 14px;
+        }
+
+        /* Contact items */
+        .sb-contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+
+        .sb-contact-item i {
+            color: var(--cyan);
+            font-size: 12px;
+            margin-top: 2px;
+            width: 14px;
+            flex-shrink: 0;
+        }
+
+        .sb-contact-item span {
+            font-size: 11px;
+            color: #b0b0cc;
+            line-height: 1.5;
+            word-break: break-all;
+        }
+
+        /* Skills */
+        .sb-skill {
+            margin-bottom: 12px;
+        }
+
+        .sb-skill-top {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+        }
+
+        .sb-skill-name {
+            font-size: 11px;
+            color: var(--white);
+            font-weight: 500;
+        }
+
+        .sb-skill-pct {
+            font-size: 10px;
+            color: var(--cyan);
+            font-weight: 600;
+        }
+
+        .sb-skill-bar {
+            height: 4px;
+            background: rgba(255,255,255,0.08);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .sb-skill-fill {
+            height: 100%;
+            border-radius: 4px;
+            background: linear-gradient(90deg, var(--cyan), var(--purple));
+        }
+
+        /* Languages */
+        .sb-lang {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .sb-lang-name {
+            font-size: 11px;
+            color: var(--white);
+        }
+
+        .sb-lang-dots {
+            display: flex;
+            gap: 4px;
+        }
+
+        .sb-lang-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.15);
+        }
+
+        .sb-lang-dot.filled {
+            background: linear-gradient(135deg, var(--cyan), var(--purple));
+        }
+
+        /* Interests */
+        .sb-interests {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 7px;
+        }
+
+        .sb-interest-tag {
+            padding: 4px 10px;
+            background: rgba(0,245,255,0.08);
+            border: 1px solid rgba(0,245,255,0.2);
+            border-radius: 50px;
+            font-size: 10px;
+            color: var(--cyan);
+            letter-spacing: 0.5px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- TOP BAR -->
+    <div id="dl-bar">
+        <div class="bar-left">
+            <img src="My%20Picture.JPG" alt="Abid Mehmood">
+            <span class="bar-title">ABID MEHMOOD — CV</span>
+        </div>
+        <div class="bar-right">
+            <a href="index.html" class="btn-back"><i class="fas fa-arrow-left"></i> Back</a>
+            <button class="btn-download" onclick="downloadCV()">
+                <i class="fas fa-download"></i> Download PDF
+            </button>
+        </div>
+    </div>
+
+    <!-- CV PAGE -->
+    <div id="cv-wrapper">
+        <div id="cv-page">
+
+            <!-- LEFT SIDEBAR -->
+            <div class="cv-sidebar">
+
+                <!-- Photo & Name -->
+                <div class="cv-photo-wrap">
+                    <div class="cv-photo-ring">
+                        <img src="My%20Picture.JPG" alt="Abid Mehmood">
+                    </div>
+                    <div class="cv-name">ABID<br>MEHMOOD</div>
+                    <div class="cv-role">Full Stack Developer</div>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <div class="sb-title">Contact</div>
+                    <div class="sb-contact-item"><i class="fas fa-envelope"></i><span>abidbusiness2025@gmail.com</span></div>
+                    <div class="sb-contact-item"><i class="fas fa-phone"></i><span>+92 302 9382306</span></div>
+                    <div class="sb-contact-item"><i class="fab fa-whatsapp"></i><span>+92 302 9382306</span></div>
+                    <div class="sb-contact-item"><i class="fas fa-map-marker-alt"></i><span>Pakistan</span></div>
+                    <div class="sb-contact-item"><i class="fab fa-github"></i><span>github.com/appdeveloper2025-abid</span></div>
+                </div>
+
+                <!-- Skills -->
+                <div>
+                    <div class="sb-title">Technical Skills</div>
+                    <div class="sb-skill"><div class="sb-skill-top"><span class="sb-skill-name">HTML5</span><span class="sb-skill-pct">95%</span></div><div class="sb-skill-bar"><div class="sb-skill-fill" style="width:95%"></div></div></div>
+                    <div class="sb-skill"><div class="sb-skill-top"><span class="sb-skill-name">CSS3</span><span class="sb-skill-pct">90%</span></div><div class="sb-skill-bar"><div class="sb-skill-fill" style="width:90%"></div></div></div>
+                    <div class="sb-skill"><div class="sb-skill-top"><span class="sb-skill-name">JavaScript</span><span class="sb-skill-pct">88%</span></div><div class="sb-skill-bar"><div class="sb-skill-fill" style="width:88%"></div></div></div>
+                    <div class="sb-skill"><div class="sb-skill-top"><span class="sb-skill-name">React</span><span class="sb-skill-pct">85%</span></div><div class="sb-skill-bar"><div class="sb-skill-fill" style="width:85%"></div></div></div>
+                    <div class="sb-skill"><div class="sb-skill-top"><span class="sb-skill-name">Python</span><span class="sb-skill-pct">80%</span></div><div class="sb-skill-bar"><div class="sb-skill-fill" style="width:80%"></div></div></div>
+                    <div class="sb-skill"><div class="sb-skill-top"><span class="sb-skill-name">Node.js</span><span class="sb-skill-pct">78%</span></div><div class="sb-skill-bar"><div class="sb-skill-fill" style="width:78%"></div></div></div>
+                    <div class="sb-skill"><div class="sb-skill-top"><span class="sb-skill-name">Databases</span><span class="sb-skill-pct">82%</span></div><div class="sb-skill-bar"><div class="sb-skill-fill" style="width:82%"></div></div></div>
+                    <div class="sb-skill"><div class="sb-skill-top"><span class="sb-skill-name">Three.js</span><span class="sb-skill-pct">75%</span></div><div class="sb-skill-bar"><div class="sb-skill-fill" style="width:75%"></div></div></div>
+                </div>
+
+                <!-- Languages -->
+                <div>
+                    <div class="sb-title">Languages</div>
+                    <div class="sb-lang"><span class="sb-lang-name">Urdu</span><div class="sb-lang-dots"><div class="sb-lang-dot filled"></div><div class="sb-lang-dot filled"></div><div class="sb-lang-dot filled"></div><div class="sb-lang-dot filled"></div><div class="sb-lang-dot filled"></div></div></div>
+                    <div class="sb-lang"><span class="sb-lang-name">English</span><div class="sb-lang-dots"><div class="sb-lang-dot filled"></div><div class="sb-lang-dot filled"></div><div class="sb-lang-dot filled"></div><div class="sb-lang-dot filled"></div><div class="sb-lang-dot"></div></div></div>
+                </div>
+
+                <!-- Interests -->
+                <div>
+                    <div class="sb-title">Interests</div>
+                    <div class="sb-interests">
+                        <span class="sb-interest-tag">Cyber Security</span>
+                        <span class="sb-interest-tag">AI / ML</span>
+                        <span class="sb-interest-tag">Web Design</span>
+                        <span class="sb-interest-tag">3D Graphics</span>
+                        <span class="sb-interest-tag">Research</span>
+                        <span class="sb-interest-tag">Open Source</span>
+                    </div>
+                </div>
+
+            </div>
+            <!-- END SIDEBAR -->
+
+            <!-- RIGHT MAIN -->
+            <div class="cv-main">
+
+                <!-- Header strip -->
+                <div class="cv-header-strip">
+                    <div class="cv-header-name">ABID <span>MEHMOOD</span></div>
+                    <div class="cv-header-tags">
+                        <span>Web Designer</span>
+                        <span>Programmer</span>
+                        <span>Researcher</span>
+                        <span>Cyber Security</span>
+                    </div>
+                </div>
+
+                <div class="cv-body">
+
+                    <!-- About -->
+                    <div class="cv-section">
+                        <div class="cv-sec-title"><i class="fas fa-user"></i> About Me</div>
+                        <p class="cv-about-text">I am a passionate Full Stack Developer and Cyber Security enthusiast with expertise in creating stunning digital experiences. My work combines technical excellence with creative design to deliver solutions that stand out. I specialize in building modern web applications, 3D experiences, AI-powered tools, and conducting security research.</p>
+                    </div>
+
+                    <!-- Experience -->
+                    <div class="cv-section">
+                        <div class="cv-sec-title"><i class="fas fa-briefcase"></i> Experience</div>
+                        <div class="cv-item">
+                            <div class="cv-item-header">
+                                <div><div class="cv-item-title">Full Stack Developer &amp; Designer</div><div class="cv-item-sub">Freelance &mdash; Remote</div></div>
+                                <div class="cv-item-date">2022 &mdash; Present</div>
+                            </div>
+                            <ul class="cv-item-list">
+                                <li>Designed and developed 42+ web projects including e-commerce stores, educational platforms and 3D web apps.</li>
+                                <li>Built AI-powered tools including phishing URL detection and Notes Professor AI using Python and ML.</li>
+                                <li>Delivered responsive UI/UX designs for 30+ clients across various industries.</li>
+                            </ul>
+                        </div>
+                        <div class="cv-item">
+                            <div class="cv-item-header">
+                                <div><div class="cv-item-title">Cyber Security Researcher</div><div class="cv-item-sub">Independent Research</div></div>
+                                <div class="cv-item-date">2023 &mdash; Present</div>
+                            </div>
+                            <ul class="cv-item-list">
+                                <li>Conducted research on phishing URL detection using machine learning algorithms.</li>
+                                <li>Developed OSINT tools for WhatsApp data analysis and Google Dorking.</li>
+                                <li>Built Cyber Threat Intelligence platform for monitoring and analysis.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Education -->
+                    <div class="cv-section">
+                        <div class="cv-sec-title"><i class="fas fa-graduation-cap"></i> Education</div>
+                        <div class="cv-item">
+                            <div class="cv-item-header">
+                                <div><div class="cv-item-title">Bachelor of Science &mdash; Computer Science</div><div class="cv-item-sub">University, Pakistan</div></div>
+                                <div class="cv-item-date">2022 &mdash; Present</div>
+                            </div>
+                            <ul class="cv-item-list">
+                                <li>Specialization in Software Engineering, AI and Cyber Security.</li>
+                                <li>Active participant in programming competitions and research projects.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Featured Projects -->
+                    <div class="cv-section">
+                        <div class="cv-sec-title"><i class="fas fa-code"></i> Featured Projects</div>
+                        <div class="cv-projects-grid">
+                            <div class="cv-proj"><div class="cv-proj-name"><i class="fas fa-shield-alt"></i> Phishing URL Detection</div><div class="cv-proj-tags"><span>AI</span><span>Python</span><span>Security</span></div><div class="cv-proj-desc">ML-based research system for detecting phishing URLs to protect users from cyber threats.</div></div>
+                            <div class="cv-proj"><div class="cv-proj-name"><i class="fas fa-robot"></i> Notes Professor AI</div><div class="cv-proj-tags"><span>AI</span><span>Python</span><span>Education</span></div><div class="cv-proj-desc">AI-powered notes assistant that generates summaries and answers student questions.</div></div>
+                            <div class="cv-proj"><div class="cv-proj-name"><i class="fas fa-store"></i> Online Store</div><div class="cv-proj-tags"><span>Web</span><span>JavaScript</span><span>E-Commerce</span></div><div class="cv-proj-desc">Full-featured e-commerce platform with cart, checkout and product management.</div></div>
+                            <div class="cv-proj"><div class="cv-proj-name"><i class="fas fa-cube"></i> 3D Browser Game</div><div class="cv-proj-tags"><span>Three.js</span><span>WebGL</span><span>Game</span></div><div class="cv-proj-desc">Immersive 3D browser game with real-time rendering built using Three.js and WebGL.</div></div>
+                            <div class="cv-proj"><div class="cv-proj-name"><i class="fas fa-star"></i> Astronomy Website</div><div class="cv-proj-tags"><span>Web</span><span>CSS</span><span>Science</span></div><div class="cv-proj-desc">Interactive astronomy website exploring space, planets and galaxies with stunning visuals.</div></div>
+                            <div class="cv-proj"><div class="cv-proj-name"><i class="fas fa-eye"></i> Cyber Threat Intel</div><div class="cv-proj-tags"><span>Security</span><span>AI</span><span>Python</span></div><div class="cv-proj-desc">Cyber threat intelligence platform for real-time monitoring and threat analysis.</div></div>
+                        </div>
+                    </div>
+
+                    <!-- Stats -->
+                    <div class="cv-stats-row">
+                        <div class="cv-stat"><span class="cv-stat-num">50+</span><span class="cv-stat-label">Projects</span></div>
+                        <div class="cv-stat"><span class="cv-stat-num">3+</span><span class="cv-stat-label">Years Exp</span></div>
+                        <div class="cv-stat"><span class="cv-stat-num">30+</span><span class="cv-stat-label">Clients</span></div>
+                        <div class="cv-stat"><span class="cv-stat-num">42+</span><span class="cv-stat-label">GitHub Repos</span></div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- END MAIN -->
+
+        </div>
+    </div>
+
+</body>
+</html>
+
+<script>
+function downloadCV() {
+    window.print();
+}
+</script>

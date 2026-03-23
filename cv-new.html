@@ -1,0 +1,1476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abid Mehmood — Professional CV</title>
+    <link rel="icon" type="image/jpeg" href="My%20Picture.JPG">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&family=Orbitron:wght@400;700;900&family=Exo+2:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+    <style>
+        /* Sci-Fi Angular Font for Name */
+        .sci-fi-name {
+            font-family: 'Orbitron', 'Exo 2', monospace !important;
+            font-weight: 900 !important;
+            letter-spacing: 3px !important;
+            text-transform: uppercase !important;
+            text-shadow: 0 0 10px rgba(255, 107, 53, 0.3) !important;
+        }
+
+        /* Screen styles for table layout */
+        body {
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            line-height: 1.4;
+            margin: 0;
+            padding: 15px;
+            background: white;
+            color: #333;
+        }
+        
+        .print-layout {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+
+        /* Reset & Variables */
+        *, *::before, *::after { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+        }
+
+        :root {
+            --primary: #ff6b35;
+            --secondary: #f7931e;
+            --accent: #ffb347;
+            --success: #ff8c42;
+            --warning: #ffa726;
+            --danger: #ff5722;
+            --dark: #2d1b0e;
+            --darker: #1a0f08;
+            --light: #fff8f3;
+            --white: #ffffff;
+            --gray-50: #fdf7f0;
+            --gray-100: #f7e6d3;
+            --gray-200: #f0d5b7;
+            --gray-300: #e8c49a;
+            --gray-400: #d4a574;
+            --gray-500: #b8864d;
+            --gray-600: #9c6d2e;
+            --gray-700: #7d5424;
+            --gray-800: #5e3f1b;
+            --gray-900: #3f2a12;
+            --gradient-primary: linear-gradient(135deg, #ff6b35 0%, #f7931e 50%, #ffb347 100%);
+            --gradient-accent: linear-gradient(135deg, #ff8c42 0%, #ffa726 100%);
+            --gradient-success: linear-gradient(135deg, #ffb347 0%, #ffd54f 100%);
+            --gradient-warning: linear-gradient(135deg, #ff9800 0%, #ff5722 100%);
+            --shadow-sm: 0 1px 2px 0 rgb(255 107 53 / 0.1);
+            --shadow-md: 0 4px 6px -1px rgb(255 107 53 / 0.15), 0 2px 4px -2px rgb(255 107 53 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(255 107 53 / 0.2), 0 4px 6px -4px rgb(255 107 53 / 0.1);
+            --shadow-xl: 0 20px 25px -5px rgb(255 107 53 / 0.25), 0 8px 10px -6px rgb(255 107 53 / 0.15);
+        }
+
+        /* Header & Navigation */
+        .cv-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--gray-200);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 2rem;
+            z-index: 1000;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .cv-header-left {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .cv-header-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--primary);
+        }
+
+        .cv-header-title {
+            font-family: 'Orbitron', 'Exo 2', monospace !important;
+            font-size: 1.1rem;
+            font-weight: 900 !important;
+            letter-spacing: 2px !important;
+            text-transform: uppercase !important;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 8px rgba(255, 107, 53, 0.2) !important;
+        }
+
+        .cv-header-actions {
+            display: flex;
+            gap: 0.75rem;
+            align-items: center;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border: none;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid var(--gray-300);
+            color: var(--gray-700);
+        }
+
+        .btn-outline:hover {
+            background: var(--gray-50);
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-primary {
+            background: var(--gradient-primary);
+            color: white;
+            box-shadow: var(--shadow-md);
+        }
+
+        /* Main CV Container */
+        .cv-container {
+            margin-top: 60px;
+            padding: 1rem;
+            display: flex;
+            justify-content: center;
+            min-height: calc(100vh - 60px);
+        }
+
+        .cv-page {
+            width: 100%;
+            max-width: 1200px;
+            background: white;
+            border-radius: 1.5rem;
+            box-shadow: var(--shadow-xl);
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 380px 1fr;
+            min-height: 900px;
+            position: relative;
+        }
+
+        .cv-page::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-primary);
+        }
+
+        /* Left Sidebar */
+        .cv-sidebar {
+            background: var(--gradient-primary);
+            padding: 1.5rem;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+
+        /* Profile Section */
+        .cv-profile {
+            text-align: center;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .cv-profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            margin: 0 auto 1rem;
+            display: block;
+        }
+
+        .cv-profile-name {
+            font-family: 'Orbitron', 'Exo 2', monospace !important;
+            font-size: 1.5rem;
+            font-weight: 900 !important;
+            letter-spacing: 3px !important;
+            text-transform: uppercase !important;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.3) !important;
+        }
+
+        .cv-profile-title {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            font-weight: 500;
+        }
+
+        .sidebar-section {
+            margin-bottom: 1rem;
+        }
+
+        .sidebar-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+            font-size: 0.85rem;
+        }
+
+        .cv-main {
+            background: var(--white);
+            display: flex;
+            flex-direction: column;
+            padding: 1.5rem;
+        }
+
+        /* Main Header */
+        .cv-main-header {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 1.5rem;
+            margin: -1.5rem -1.5rem 1.5rem -1.5rem;
+            border-radius: 0 0 1rem 0;
+        }
+
+        .main-name {
+            font-family: 'Orbitron', 'Exo 2', monospace !important;
+            font-size: 2rem;
+            font-weight: 900 !important;
+            letter-spacing: 4px !important;
+            text-transform: uppercase !important;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.4) !important;
+        }
+
+        .main-name .accent {
+            color: var(--accent);
+        }
+
+        .main-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .main-tags span {
+            padding: 0.25rem 0.75rem;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 1rem;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+
+        /* Sections */
+        .cv-section {
+            margin-bottom: 1.5rem;
+        }
+
+        .section-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .section-title i {
+            color: var(--accent);
+        }
+
+        .section-text {
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: var(--gray-600);
+        }
+
+        /* Skills */
+        .skill-item {
+            margin-bottom: 0.75rem;
+        }
+
+        .skill-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.25rem;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .skill-bar {
+            height: 4px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .skill-fill {
+            height: 100%;
+            background: var(--gradient-accent);
+            border-radius: 2px;
+            transition: width 1s ease;
+        }
+
+        /* Languages */
+        .language-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.75rem;
+            font-size: 0.8rem;
+        }
+
+        .lang-dots {
+            display: flex;
+            gap: 3px;
+        }
+
+        .dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .dot.filled {
+            background: var(--accent);
+        }
+
+        /* Timeline Items */
+        .timeline-item {
+            margin-bottom: 1.25rem;
+            padding-left: 1rem;
+            border-left: 2px solid var(--primary);
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -5px;
+            top: 0;
+            width: 8px;
+            height: 8px;
+            background: var(--primary);
+            border-radius: 50%;
+        }
+
+        .timeline-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 0.25rem;
+        }
+
+        .timeline-header h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--gray-800);
+        }
+
+        .timeline-date {
+            font-size: 0.75rem;
+            background: var(--gradient-primary);
+            color: white;
+            padding: 0.25rem 0.5rem;
+            border-radius: 1rem;
+            white-space: nowrap;
+        }
+
+        .timeline-org {
+            font-size: 0.85rem;
+            color: var(--primary);
+            font-weight: 500;
+            margin-bottom: 0.25rem;
+        }
+
+        .timeline-detail {
+            font-size: 0.8rem;
+            color: var(--gray-600);
+            line-height: 1.4;
+        }
+
+        /* Certifications Grid */
+        .cert-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 0.75rem;
+        }
+
+        .cert-item {
+            background: var(--gray-50);
+            padding: 0.75rem;
+            border-radius: 0.5rem;
+            border-left: 3px solid var(--accent);
+        }
+
+        .cert-item h4 {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--gray-800);
+            margin-bottom: 0.25rem;
+        }
+
+        .cert-item p {
+            font-size: 0.8rem;
+            color: var(--gray-600);
+        }
+
+        /* Projects Grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.75rem;
+        }
+
+        .project-item {
+            background: var(--gray-50);
+            padding: 0.75rem;
+            border-radius: 0.5rem;
+            border-left: 3px solid var(--primary);
+        }
+
+        .project-item h4 {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--gray-800);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .project-item i {
+            color: var(--primary);
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.25rem;
+        }
+
+        .project-tags span {
+            font-size: 0.7rem;
+            background: var(--primary);
+            color: white;
+            padding: 0.125rem 0.375rem;
+            border-radius: 0.25rem;
+        }
+
+        /* Stats Section */
+        .stats-section {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--gray-200);
+        }
+
+        .stat-item {
+            text-align: center;
+            background: var(--gradient-primary);
+            color: white;
+            padding: 1rem 0.5rem;
+            border-radius: 0.5rem;
+        }
+
+        .stat-number {
+            display: block;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .stat-label {
+            font-size: 0.7rem;
+            opacity: 0.9;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Chart Containers */
+        .chart-container {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 0.75rem;
+            padding: 1rem;
+            margin-top: 0.5rem;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .chart-container canvas {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* QR Code Container */
+        .qr-container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 0.75rem;
+            padding: 1rem;
+            margin-top: 0.5rem;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .qr-container canvas {
+            background: white;
+            border-radius: 0.5rem;
+            margin: 0 auto;
+            display: block;
+        }
+
+        .qr-text {
+            font-size: 0.75rem;
+            margin-top: 0.5rem;
+            opacity: 0.9;
+        }
+
+        /* Print Styles */
+        @media print {
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            
+            body {
+                font-family: 'Inter', sans-serif !important;
+                font-size: 11px !important;
+                line-height: 1.3 !important;
+                margin: 0 !important;
+                padding: 10px !important;
+                background: white !important;
+            }
+            
+            .cv-header { display: none !important; }
+            .cv-container { 
+                margin: 0 !important; 
+                padding: 0 !important;
+                display: block !important;
+            }
+            
+            /* Hide regular layout, show print layout */
+            .cv-page { display: none !important; }
+            .print-layout { display: block !important; }
+            
+            /* Print Layout */
+            .print-layout::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 3px;
+                background: linear-gradient(135deg, #ff6b35 0%, #f7931e 50%, #ffb347 100%) !important;
+            }
+            
+            /* Print Header */
+            .print-header {
+                display: block !important;
+                text-align: center;
+                margin-bottom: 15px;
+                padding: 15px 0;
+                border-bottom: 2px solid #ff6b35;
+                position: relative;
+            }
+            
+            .print-header img {
+                width: 80px !important;
+                height: 80px !important;
+                border-radius: 50% !important;
+                border: 3px solid #ff6b35 !important;
+                object-fit: cover !important;
+                object-position: top center !important;
+                margin-bottom: 10px !important;
+                display: block !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+            }
+            
+            .print-name {
+                font-family: 'Orbitron', 'Exo 2', monospace !important;
+                font-size: 24px !important;
+                font-weight: 900 !important;
+                letter-spacing: 4px !important;
+                text-transform: uppercase !important;
+                color: #ff6b35 !important;
+                margin: 0 0 5px 0 !important;
+                text-shadow: 0 0 8px rgba(255, 107, 53, 0.3) !important;
+            }
+            
+            .print-title {
+                font-size: 14px !important;
+                color: #666 !important;
+                margin: 0 0 8px 0 !important;
+            }
+            
+            .print-contact {
+                font-size: 10px !important;
+                color: #555 !important;
+                display: flex !important;
+                justify-content: center !important;
+                gap: 15px !important;
+                flex-wrap: wrap !important;
+            }
+            
+            /* Print Tables */
+            .print-section {
+                display: block !important;
+                margin-bottom: 12px !important;
+                page-break-inside: avoid !important;
+            }
+            
+            .print-section-title {
+                background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%) !important;
+                color: white !important;
+                padding: 6px 12px !important;
+                font-size: 12px !important;
+                font-weight: 700 !important;
+                text-transform: uppercase !important;
+                letter-spacing: 1px !important;
+                margin: 0 0 8px 0 !important;
+                border-radius: 3px !important;
+            }
+            
+            .print-table {
+                width: 100% !important;
+                border-collapse: collapse !important;
+                margin-bottom: 8px !important;
+                font-size: 10px !important;
+            }
+            
+            .print-table th {
+                background: #fff8f3 !important;
+                color: #ff6b35 !important;
+                padding: 6px 8px !important;
+                text-align: left !important;
+                font-weight: 600 !important;
+                border: 1px solid #ffb347 !important;
+                font-size: 10px !important;
+            }
+            
+            .print-table td {
+                padding: 5px 8px !important;
+                border: 1px solid #f0d5b7 !important;
+                vertical-align: top !important;
+                line-height: 1.2 !important;
+            }
+            
+            .print-table tr:nth-child(even) {
+                background: #fdf7f0 !important;
+            }
+            
+            /* Two Column Layout */
+            .print-two-column {
+                display: flex !important;
+                gap: 15px !important;
+                margin-bottom: 12px !important;
+            }
+            
+            .print-column {
+                flex: 1 !important;
+            }
+            
+            /* Skills Table */
+            .skills-table td:first-child {
+                font-weight: 600 !important;
+                color: #ff6b35 !important;
+                width: 40% !important;
+            }
+            
+            .skills-table td:last-child {
+                width: 60% !important;
+            }
+            
+            .skill-bar-print {
+                height: 8px !important;
+                background: #f0d5b7 !important;
+                border-radius: 4px !important;
+                overflow: hidden !important;
+                position: relative !important;
+                margin-bottom: 2px !important;
+            }
+            
+            .skill-fill-print {
+                height: 100% !important;
+                background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%) !important;
+                border-radius: 4px !important;
+            }
+            
+            /* Stats Row */
+            .stats-row {
+                display: flex !important;
+                justify-content: space-around !important;
+                background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%) !important;
+                color: white !important;
+                padding: 8px !important;
+                border-radius: 5px !important;
+                margin: 10px 0 !important;
+            }
+            
+            .stat-item-print {
+                text-align: center !important;
+            }
+            
+            .stat-number-print {
+                font-size: 16px !important;
+                font-weight: 700 !important;
+                display: block !important;
+            }
+            
+            .stat-label-print {
+                font-size: 9px !important;
+                text-transform: uppercase !important;
+                letter-spacing: 1px !important;
+            }
+            
+            /* QR Code Print */
+            .qr-print {
+                position: absolute !important;
+                top: 10px !important;
+                right: 10px !important;
+                text-align: center !important;
+            }
+            
+            .qr-print canvas {
+                width: 50px !important;
+                height: 50px !important;
+            }
+            
+            .qr-print p {
+                font-size: 8px !important;
+                margin: 2px 0 0 0 !important;
+                color: #666 !important;
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .cv-page {
+                grid-template-columns: 1fr;
+                max-width: 100%;
+            }
+            .cv-container {
+                padding: 0.5rem;
+            }
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            .stats-section {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Modern Header -->
+    <div class="cv-header">
+        <div class="cv-header-left">
+            <img src="My%20Picture.JPG" alt="Abid Mehmood" class="cv-header-avatar">
+            <span class="cv-header-title">ABID MEHMOOD — Professional CV</span>
+        </div>
+        <div class="cv-header-actions">
+            <a href="index.html" class="btn btn-outline"><i class="fas fa-arrow-left"></i> Back</a>
+            <button class="btn btn-primary" onclick="downloadCV()">
+                <i class="fas fa-download"></i> Download PDF
+            </button>
+        </div>
+    </div>
+
+    <!-- CV Container -->
+    <div class="cv-container">
+        <!-- Print Layout (Only visible when printing) -->
+        <div class="print-layout" style="display: none;">
+            <div class="print-header">
+                <img src="My%20Picture.JPG" alt="Abid Mehmood" style="width: 80px; height: 80px; border-radius: 50%; border: 3px solid #ff6b35; object-fit: cover; object-position: top center; margin-bottom: 10px;">
+                <h1 class="print-name">ABID MEHMOOD</h1>
+                <p class="print-title">Full Stack Developer & IT Expert</p>
+                <div class="print-contact">
+                    <span>📧 abidbusiness2025@gmail.com</span>
+                    <span>📱 +92 302 9382306</span>
+                    <span>📍 Jabu Khel, Lakki Marwat, KPK</span>
+                    <span>🎂 DOB: 04-04-2004</span>
+                </div>
+                <div class="qr-print">
+                    <canvas id="qrCodePrint" width="50" height="50"></canvas>
+                    <p>GitHub</p>
+                </div>
+            </div>
+            
+            <div class="stats-row">
+                <div class="stat-item-print">
+                    <span class="stat-number-print">35+</span>
+                    <span class="stat-label-print">Projects</span>
+                </div>
+                <div class="stat-item-print">
+                    <span class="stat-number-print">4+</span>
+                    <span class="stat-label-print">Years Study</span>
+                </div>
+                <div class="stat-item-print">
+                    <span class="stat-number-print">3.87</span>
+                    <span class="stat-label-print">CGPA</span>
+                </div>
+                <div class="stat-item-print">
+                    <span class="stat-number-print">3</span>
+                    <span class="stat-label-print">Certificates</span>
+                </div>
+            </div>
+            
+            <div class="print-two-column">
+                <div class="print-column">
+                    <div class="print-section">
+                        <h3 class="print-section-title">🎓 Education</h3>
+                        <table class="print-table">
+                            <thead>
+                                <tr>
+                                    <th>Degree</th>
+                                    <th>Institution</th>
+                                    <th>Year</th>
+                                    <th>Result</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>BS Computer Science</strong></td>
+                                    <td>GPGC Lakki Marwat</td>
+                                    <td>2022-Continue</td>
+                                    <td><strong>3.87/4.0 CGPA</strong></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>F.SC Computer Science</strong></td>
+                                    <td>Govt. Degree College Ghazni Khel</td>
+                                    <td>2020-2022</td>
+                                    <td><strong>901/1100 (81.9%)</strong></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Matric (Science)</strong></td>
+                                    <td>Govt. Model High School Lakki Marwat</td>
+                                    <td>2018-2020</td>
+                                    <td><strong>920/1100 (83.6%)</strong></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="print-section">
+                        <h3 class="print-section-title">🏆 Certifications</h3>
+                        <table class="print-table">
+                            <thead>
+                                <tr>
+                                    <th>Certification</th>
+                                    <th>Institution</th>
+                                    <th>Year</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Android App Development</strong></td>
+                                    <td>KP-Digital Skill, Pakistan</td>
+                                    <td>2025</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Website Designing</strong></td>
+                                    <td>NAVTTC, Pakistan</td>
+                                    <td>2025</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>D.IT (Diploma)</strong></td>
+                                    <td>Technical Institute</td>
+                                    <td>Continue</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <div class="print-column">
+                    <div class="print-section">
+                        <h3 class="print-section-title">💻 Technical Skills</h3>
+                        <table class="print-table skills-table">
+                            <tbody>
+                                <tr>
+                                    <td>HTML5</td>
+                                    <td>
+                                        <div class="skill-bar-print">
+                                            <div class="skill-fill-print" style="width: 95%;"></div>
+                                        </div>
+                                        <small>95%</small>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>CSS3</td>
+                                    <td>
+                                        <div class="skill-bar-print">
+                                            <div class="skill-fill-print" style="width: 90%;"></div>
+                                        </div>
+                                        <small>90%</small>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>JavaScript</td>
+                                    <td>
+                                        <div class="skill-bar-print">
+                                            <div class="skill-fill-print" style="width: 88%;"></div>
+                                        </div>
+                                        <small>88%</small>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Java</td>
+                                    <td>
+                                        <div class="skill-bar-print">
+                                            <div class="skill-fill-print" style="width: 85%;"></div>
+                                        </div>
+                                        <small>85%</small>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>C++</td>
+                                    <td>
+                                        <div class="skill-bar-print">
+                                            <div class="skill-fill-print" style="width: 82%;"></div>
+                                        </div>
+                                        <small>82%</small>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Python</td>
+                                    <td>
+                                        <div class="skill-bar-print">
+                                            <div class="skill-fill-print" style="width: 80%;"></div>
+                                        </div>
+                                        <small>80%</small>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="print-section">
+                        <h3 class="print-section-title">🌐 Languages</h3>
+                        <table class="print-table">
+                            <tbody>
+                                <tr>
+                                    <td><strong>Pashto</strong></td>
+                                    <td>Mother Language</td>
+                                    <td>⭐⭐⭐⭐⭐</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Urdu</strong></td>
+                                    <td>National Language</td>
+                                    <td>⭐⭐⭐⭐⭐</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>English</strong></td>
+                                    <td>International Language</td>
+                                    <td>⭐⭐⭐⭐☆</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="print-section">
+                <h3 class="print-section-title">💼 Experience & Projects</h3>
+                <table class="print-table">
+                    <thead>
+                        <tr>
+                            <th>Role/Project</th>
+                            <th>Description</th>
+                            <th>Technologies</th>
+                            <th>Period</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Full Stack Developer</strong></td>
+                            <td>Developed 35+ web projects, Android apps, IT consulting</td>
+                            <td>HTML5, CSS3, JS, Java, Python</td>
+                            <td>2022-Present</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Phishing URL Detection</strong></td>
+                            <td>Final Year Project using Hybrid ML Models for cybersecurity</td>
+                            <td>Python, Machine Learning</td>
+                            <td>2024-2025</td>
+                        </tr>
+                        <tr>
+                            <td><strong>E-Commerce Platform</strong></td>
+                            <td>Complete online shopping solution with payment integration</td>
+                            <td>JavaScript, Full-Stack</td>
+                            <td>2023-2024</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Android Applications</strong></td>
+                            <td>Multiple mobile apps for various business solutions</td>
+                            <td>Java, Android SDK</td>
+                            <td>2023-Present</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div style="text-align: center; margin-top: 15px; padding-top: 10px; border-top: 2px solid #ff6b35; font-size: 10px; color: #666;">
+                <p><strong style="font-family: 'Orbitron', 'Exo 2', monospace !important; font-weight: 900 !important; letter-spacing: 2px !important; text-transform: uppercase !important;">ABID MEHMOOD</strong> | Full Stack Developer & IT Expert | 📧 abidbusiness2025@gmail.com | 📱 +92 302 9382306</p>
+            </div>
+        </div>
+        
+        <div class="cv-page">
+            <!-- Left Sidebar -->
+            <div class="cv-sidebar">
+                <!-- Profile Section -->
+                <div class="cv-profile">
+                    <img src="My%20Picture.JPG" alt="Abid Mehmood" class="cv-profile-img">
+                    <h1 class="cv-profile-name">ABID MEHMOOD</h1>
+                    <p class="cv-profile-title">Full Stack Developer & IT Expert</p>
+                </div>
+                
+                <!-- Contact Section -->
+                <div class="sidebar-section">
+                    <h3 class="sidebar-title">Contact</h3>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>abidbusiness2025@gmail.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+92 302 9382306</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Jabu Khel, Lakki Marwat, KPK</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-calendar"></i>
+                        <span>DOB: 04-04-2004</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-user"></i>
+                        <span>Father: Noor Zaman</span>
+                    </div>
+                </div>
+
+                <!-- Skills Section -->
+                <div class="sidebar-section">
+                    <h3 class="sidebar-title">Technical Skills</h3>
+                    <div class="chart-container">
+                        <canvas id="skillsChart" width="300" height="200"></canvas>
+                    </div>
+                </div>
+
+                <!-- Academic Progress -->
+                <div class="sidebar-section">
+                    <h3 class="sidebar-title">Academic Progress</h3>
+                    <div class="chart-container">
+                        <canvas id="academicChart" width="300" height="150"></canvas>
+                    </div>
+                </div>
+
+                <!-- Languages Section -->
+                <div class="sidebar-section">
+                    <h3 class="sidebar-title">Languages</h3>
+                    <div class="language-item">
+                        <span>Pashto (Mother Language)</span>
+                        <div class="lang-dots">
+                            <div class="dot filled"></div>
+                            <div class="dot filled"></div>
+                            <div class="dot filled"></div>
+                            <div class="dot filled"></div>
+                            <div class="dot filled"></div>
+                        </div>
+                    </div>
+                    <div class="language-item">
+                        <span>Urdu (National Language)</span>
+                        <div class="lang-dots">
+                            <div class="dot filled"></div>
+                            <div class="dot filled"></div>
+                            <div class="dot filled"></div>
+                            <div class="dot filled"></div>
+                            <div class="dot filled"></div>
+                        </div>
+                    </div>
+                    <div class="language-item">
+                        <span>English (International)</span>
+                        <div class="lang-dots">
+                            <div class="dot filled"></div>
+                            <div class="dot filled"></div>
+                            <div class="dot filled"></div>
+                            <div class="dot filled"></div>
+                            <div class="dot"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- QR Code Section -->
+                <div class="sidebar-section">
+                    <h3 class="sidebar-title">Projects Portfolio</h3>
+                    <div class="qr-container">
+                        <canvas id="qrCode" width="120" height="120"></canvas>
+                        <p class="qr-text">Scan for All Projects</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Main Content -->
+            <div class="cv-main">
+                <!-- Header -->
+                <div class="cv-main-header">
+                    <h1 class="main-name">ABID <span class="accent">MEHMOOD</span></h1>
+                    <div class="main-tags">
+                        <span>Web Designer</span>
+                        <span>Programmer</span>
+                        <span>Researcher</span>
+                        <span>Cyber Security</span>
+                    </div>
+                </div>
+                
+                <!-- About Section -->
+                <div class="cv-section">
+                    <h2 class="section-title"><i class="fas fa-user"></i> About Me</h2>
+                    <p class="section-text">I am a passionate Computer Science student and Full Stack Developer with expertise in multiple programming languages including C++, Java, and Python. I specialize in Android app development, web technologies, and have knowledge in cyber security. Currently pursuing my BS in Computer Science with a research focus on Phishing URL Detection using Hybrid Models.</p>
+                </div>
+
+                <!-- Education Section -->
+                <div class="cv-section">
+                    <h2 class="section-title"><i class="fas fa-graduation-cap"></i> Education</h2>
+                    <div class="timeline-item">
+                        <div class="timeline-header">
+                            <h3>BS Computer Science</h3>
+                            <span class="timeline-date">2022 — Continue</span>
+                        </div>
+                        <p class="timeline-org">Govt. Post Graduate College Lakki Marwat (GPGC Lakki Marwat)</p>
+                        <p class="timeline-detail">CGPA: 3.87/4.0 | Final Year Project: "Phishing URL Detection using Hybrid Model"</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-header">
+                            <h3>F.SC Computer Science</h3>
+                            <span class="timeline-date">2020 — 2022</span>
+                        </div>
+                        <p class="timeline-org">Govt. Degree College Ghazni Khel</p>
+                        <p class="timeline-detail">Marks: 901/1100 (81.9%)</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-header">
+                            <h3>Matric (Science)</h3>
+                            <span class="timeline-date">2018 — 2020</span>
+                        </div>
+                        <p class="timeline-org">Govt. Shaheed Muhammad Ghasan Khan Centenial Model High School No. 1 Lakki Marwat</p>
+                        <p class="timeline-detail">Marks: 920/1100 (83.6%)</p>
+                    </div>
+                </div>
+
+                <!-- Experience Section -->
+                <div class="cv-section">
+                    <h2 class="section-title"><i class="fas fa-briefcase"></i> Experience</h2>
+                    <div class="timeline-item">
+                        <div class="timeline-header">
+                            <h3>Full Stack Developer & IT Expert</h3>
+                            <span class="timeline-date">2022 — Present</span>
+                        </div>
+                        <p class="timeline-org">Freelance — Remote</p>
+                        <p class="timeline-detail">Developed 35+ web projects using HTML5, CSS3, JavaScript, and modern frameworks. Created Android applications and provided IT consulting services.</p>
+                    </div>
+                </div>
+
+                <!-- Certifications Section -->
+                <div class="cv-section">
+                    <h2 class="section-title"><i class="fas fa-certificate"></i> Certifications</h2>
+                    <div class="cert-grid">
+                        <div class="cert-item">
+                            <h4>Android App Development Course</h4>
+                            <p>KP-Digital Skill, Pakistan (2025)</p>
+                        </div>
+                        <div class="cert-item">
+                            <h4>Website Designing Course</h4>
+                            <p>NAVTTC, Pakistan (2025)</p>
+                        </div>
+                        <div class="cert-item">
+                            <h4>D.IT (Diploma in Information Technology)</h4>
+                            <p>Technical Institute (Continue)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projects Section -->
+                <div class="cv-section">
+                    <h2 class="section-title"><i class="fas fa-code"></i> Featured Projects</h2>
+                    <div class="projects-grid">
+                        <div class="project-item">
+                            <h4><i class="fas fa-shield-alt"></i> Phishing URL Detection</h4>
+                            <div class="project-tags">
+                                <span>Python</span><span>ML</span><span>Security</span>
+                            </div>
+                        </div>
+                        <div class="project-item">
+                            <h4><i class="fab fa-android"></i> Android Applications</h4>
+                            <div class="project-tags">
+                                <span>Java</span><span>Android</span><span>Mobile</span>
+                            </div>
+                        </div>
+                        <div class="project-item">
+                            <h4><i class="fas fa-store"></i> E-Commerce Platform</h4>
+                            <div class="project-tags">
+                                <span>Web</span><span>JavaScript</span><span>Full-Stack</span>
+                            </div>
+                        </div>
+                        <div class="project-item">
+                            <h4><i class="fas fa-gamepad"></i> Browser Games</h4>
+                            <div class="project-tags">
+                                <span>JavaScript</span><span>HTML5</span><span>Canvas</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stats Section -->
+                <div class="stats-section">
+                    <div class="stat-item">
+                        <span class="stat-number">35+</span>
+                        <span class="stat-label">Projects</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">4+</span>
+                        <span class="stat-label">Years Study</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">2</span>
+                        <span class="stat-label">Certificates</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">1</span>
+                        <span class="stat-label">Diploma</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    function downloadCV() {
+        window.print();
+    }
+
+    // Initialize charts and QR code when page loads
+    window.addEventListener('load', function() {
+        // Check if QRious library is loaded
+        if (typeof QRious === 'undefined') {
+            console.warn('QRious library not loaded, using fallback');
+            // Fallback: create a GitHub icon link
+            const qrContainer = document.querySelector('.qr-container');
+            qrContainer.innerHTML = `
+                <div style="background: white; border-radius: 0.5rem; padding: 1rem; text-align: center;">
+                    <i class="fab fa-github" style="font-size: 2.5rem; color: #ff6b35; margin-bottom: 0.5rem;"></i>
+                    <p style="font-size: 0.75rem; color: #ff6b35; font-weight: 600;">GitHub Portfolio</p>
+                    <p style="font-size: 0.65rem; color: #666; margin-top: 0.25rem;">appdeveloper2025-abid</p>
+                </div>
+            `;
+        }
+        // Skills Bar Chart
+        const skillsCtx = document.getElementById('skillsChart').getContext('2d');
+        new Chart(skillsCtx, {
+            type: 'bar',
+            data: {
+                labels: ['HTML5', 'CSS3', 'JavaScript', 'Java', 'C++', 'Python'],
+                datasets: [{
+                    label: 'Skill Level',
+                    data: [95, 90, 88, 85, 82, 80],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.8)',
+                        'rgba(54, 162, 235, 0.8)',
+                        'rgba(255, 205, 86, 0.8)',
+                        'rgba(75, 192, 192, 0.8)',
+                        'rgba(153, 102, 255, 0.8)',
+                        'rgba(255, 159, 64, 0.8)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 205, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 2,
+                    borderRadius: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 100,
+                        ticks: {
+                            color: 'rgba(255, 255, 255, 0.8)',
+                            font: {
+                                size: 10
+                            }
+                        },
+                        grid: {
+                            color: 'rgba(255, 255, 255, 0.1)'
+                        }
+                    },
+                    x: {
+                        ticks: {
+                            color: 'rgba(255, 255, 255, 0.8)',
+                            font: {
+                                size: 9
+                            }
+                        },
+                        grid: {
+                            display: false
+                        }
+                    }
+                }
+            }
+        });
+
+        // Academic Progress Line Chart
+        const academicCtx = document.getElementById('academicChart').getContext('2d');
+        new Chart(academicCtx, {
+            type: 'line',
+            data: {
+                labels: ['Matric', 'F.SC', 'BS (Current)'],
+                datasets: [{
+                    label: 'Academic Progress',
+                    data: [83.6, 81.9, 96.75], // CGPA 3.87/4.0 = 96.75%
+                    borderColor: 'rgba(240, 147, 251, 1)',
+                    backgroundColor: 'rgba(240, 147, 251, 0.2)',
+                    borderWidth: 3,
+                    fill: true,
+                    tension: 0.4,
+                    pointBackgroundColor: 'rgba(240, 147, 251, 1)',
+                    pointBorderColor: '#fff',
+                    pointBorderWidth: 2,
+                    pointRadius: 6
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: false,
+                        min: 75,
+                        max: 100,
+                        ticks: {
+                            color: 'rgba(255, 255, 255, 0.8)',
+                            font: {
+                                size: 10
+                            }
+                        },
+                        grid: {
+                            color: 'rgba(255, 255, 255, 0.1)'
+                        }
+                    },
+                    x: {
+                        ticks: {
+                            color: 'rgba(255, 255, 255, 0.8)',
+                            font: {
+                                size: 10
+                            }
+                        },
+                        grid: {
+                            display: false
+                        }
+                    }
+                }
+            }
+        });
+
+        // Generate QR Code
+        const qrCanvas = document.getElementById('qrCode');
+        const projectsUrl = 'https://github.com/appdeveloper2025-abid';
+        
+        try {
+            // Using QRious library
+            const qr = new QRious({
+                element: qrCanvas,
+                value: projectsUrl,
+                size: 120,
+                foreground: '#ff6b35',
+                background: '#ffffff',
+                level: 'M'
+            });
+            console.log('Print QR Code generated successfully');
+        } catch (error) {
+            console.error('Print QR Code Error:', error);
+        }
+        
+        // Generate QR Code for Print Version
+        try {
+            const qrPrintCanvas = document.getElementById('qrCodePrint');
+            if (qrPrintCanvas) {
+                const qrPrint = new QRious({
+                    element: qrPrintCanvas,
+                    value: projectsUrl,
+                    size: 50,
+                    foreground: '#ff6b35',
+                    background: '#ffffff',
+                    level: 'M'
+                });
+                console.log('Print QR Code generated successfully');
+            }
+        } catch (error) {
+            console.error('Print QR Code Error:', error);
+        }
+    });
+    </script>

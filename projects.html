@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABID MEHMOOD | All Projects</title>
+    <link rel="icon" type="image/jpeg" href="My%20Picture.JPG">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="projects.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Rajdhani:wght@500;700&family=Inter:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" media="print" onload="this.media='all'">
+</head>
+<body>
+
+    <!-- Password Gate -->
+    <div id="password-gate">
+        <div class="pw-box">
+            <div class="pw-logo">
+                <img src="My%20Picture.JPG" alt="Abid Mehmood">
+            </div>
+            <h2 class="pw-title">ENTER PASSWORD</h2>
+            <div class="pw-input-wrap">
+                <input type="password" id="pw-input" placeholder="Password" autocomplete="off">
+                <button type="button" id="pw-eye"><i class="fas fa-eye"></i></button>
+                <div class="input-line"></div>
+            </div>
+            <p class="pw-error" id="pw-error"></p>
+            <button class="btn-primary" id="pw-submit">UNLOCK <i class="fas fa-lock-open"></i></button>
+        </div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- Navigation -->
+    <nav id="navbar" class="scrolled">
+        <div class="nav-logo">
+            <div class="nav-avatar">
+                <img src="My%20Picture.JPG" alt="Abid Mehmood">
+            </div>
+            <div class="logo-glow"></div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="index.html#about" class="nav-link">About</a></li>
+            <li><a href="index.html#skills" class="nav-link">Skills</a></li>
+            <li><a href="projects.html" class="nav-link active">Projects</a></li>
+            <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+        </ul>
+        <div class="hamburger">
+            <span></span><span></span><span></span>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <ul>
+            <li><a href="index.html" class="mob-link">Home</a></li>
+            <li><a href="index.html#about" class="mob-link">About</a></li>
+            <li><a href="index.html#skills" class="mob-link">Skills</a></li>
+            <li><a href="projects.html" class="mob-link">Projects</a></li>
+            <li><a href="index.html#contact" class="mob-link">Contact</a></li>
+        </ul>
+    </div>
+
+    <!-- HERO BANNER -->
+    <section id="projects-hero">
+        <canvas id="projHeroCanvas"></canvas>
+        <div class="proj-hero-content">
+            <span class="section-tag">GITHUB PORTFOLIO</span>
+            <h1 class="proj-hero-title">All <span class="accent">Projects</span></h1>
+            <p class="proj-hero-desc">Explore all my work — from web apps to games, AI tools, cybersecurity & more.</p>
+            <div class="proj-hero-stats">
+                <div class="ph-stat"><span>42+</span><p>Projects</p></div>
+                <div class="ph-divider"></div>
+                <div class="ph-stat"><span>10+</span><p>Categories</p></div>
+                <div class="ph-divider"></div>
+                <div class="ph-stat"><span>100%</span><p>Open Source</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FILTER BAR -->
+    <div class="filter-bar">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="web">Web</button>
+        <button class="filter-btn" data-filter="game">Games</button>
+        <button class="filter-btn" data-filter="ai">AI / ML</button>
+        <button class="filter-btn" data-filter="security">Security</button>
+        <button class="filter-btn" data-filter="python">Python</button>
+        <button class="filter-btn" data-filter="other">Other</button>
+    </div>
+
+    <!-- PROJECTS GRID SECTION -->
+    <section id="all-projects">
+        <div class="all-projects-container" id="projectsGrid">
+            <!-- Cards injected by JS -->
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">AM</div>
+            <div class="footer-contact">
+                <a href="mailto:abidbusiness2025@gmail.com" class="footer-contact-item">
+                    <i class="fas fa-envelope"></i> abidbusiness2025@gmail.com
+                </a>
+                <a href="tel:+923029382306" class="footer-contact-item">
+                    <i class="fas fa-phone"></i> +92 302 9382306
+                </a>
+                <a href="https://wa.me/923029382306" target="_blank" class="footer-contact-item">
+                    <i class="fab fa-whatsapp"></i> +92 302 9382306
+                </a>
+            </div>
+            <p>&copy; 2026 Abid Mehmood. All Rights Reserved.</p>
+            <p class="footer-sub">Designed & Built with ❤️ and Three.js</p>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+    <script src="script.js" defer></script>
+    <script src="projects.js" defer></script>
+</body>
+</html>
